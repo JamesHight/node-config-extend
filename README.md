@@ -15,20 +15,20 @@ Usage
 -----
 
 ````javascript
-	var configExtend = require('config-extend'),
-		obj1 = {
-			foo: 'bar',
-			bar: 'foo'
-		},
-		obj2 = {
-			bar: [
-				'foo',
-				'foo',
-				'foo'
-			]
-		},
-		obj3 = {
-			foo: 'test'
-		},
-		objCombined = configExtend(obj1, obj2, obj3);
+var configExtend = require('config-extend'),
+	obj1 = {
+		foo: 'bar',
+		bar: 'foo'
+	},
+	obj2 = {
+		bar: [
+			'foo',
+			'foo',
+			'foo'
+		]
+	},
+	obj3 = {
+		foo: 'test'
+	},
+	objCombined = configExtend(obj1, obj2, obj3);
 ````
