@@ -1,0 +1,35 @@
+{
+  "name": "config-extend",
+  "description": "Modified version of extend for config files",
+  "version": "0.0.1",
+  "author": {
+    "name": "James Hight"
+  },
+  "maintainers": [
+    {
+      "name": "jmerrick",
+      "email": "james@zavoo.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesHight/node-config-extend"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "main": "./lib/config-extend",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/JamesHight/express-markdown/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
