@@ -42,13 +42,12 @@ var configExtend = require('config-extend'),
 	objCombined = configExtend(production, staging, devFoo);
 
 	/* objCombined Value:
-	{
-		port: 1234,
-		memcached: [
-			'localhost'
-		]
-	}
-
+		{
+			port: 1234,
+			memcached: [
+				'localhost'
+			]
+		}
 	*/
 ````
 
