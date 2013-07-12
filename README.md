@@ -3,7 +3,7 @@ node-extend
 
 Object extend function designed for config files.
 
-Modified version of node module node.extend, an implementation of jQuery extend.
+Modified version of the node module node.extend, an implementation of jQuery extend.
 
 Differences:
 
