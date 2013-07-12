@@ -4,8 +4,9 @@ node-extend
 Object extend function designed for config files.
 
 Modified version of node module node.extend.
-	* Deep copying is enabled by default.
-	* Arrays are replaced instead of combined.
+
+*	Deep copying is enabled by default.
+*	Arrays are replaced instead of combined.
 
 
 Installation
