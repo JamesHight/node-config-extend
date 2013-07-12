@@ -3,7 +3,9 @@ node-extend
 
 Object extend function designed for config files.
 
-Modified version of node module node.extend.
+Modified version of node module node.extend, an implementation of jQuery extend.
+
+Differences:
 
 *	Deep copying is enabled by default.
 *	Arrays are replaced instead of combined.
