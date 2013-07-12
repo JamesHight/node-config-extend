@@ -4,6 +4,8 @@ node-extend
 Object extend function designed for config files.
 
 Modified version of node module node.extend.
+	* Deep copying is enabled by default.
+	* Arrays are replaced instead of combined.
 
 
 Installation
@@ -16,19 +18,34 @@ Usage
 
 ````javascript
 var configExtend = require('config-extend'),
-	obj1 = {
-		foo: 'bar',
-		bar: 'foo'
-	},
-	obj2 = {
-		bar: [
-			'foo',
-			'foo',
-			'foo'
+	production = {		
+		port: 1234,
+		memcached: [
+			'server1',
+			'server2',
+			'server3'
 		]
 	},
-	obj3 = {
-		foo: 'test'
+	staging = {
+		memcached: [
+			'server4'
+		]
 	},
-	objCombined = configExtend(obj1, obj2, obj3);
+	devFoo = {
+		memcached: [
+			'localhost'
+		]
+	},
+	objCombined = configExtend(production, staging, devFoo);
+
+	/* objCombined Value:
+	{
+		port: 1234,
+		memcached: [
+			'localhost'
+		]
+	}
+
+	*/
 ````
+
