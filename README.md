@@ -30,6 +30,7 @@ var configExtend = require('config-extend'),
 		]
 	},
 	staging = {
+		prot: 456,
 		memcached: [
 			'server4'
 		]
@@ -43,7 +44,7 @@ var configExtend = require('config-extend'),
 
 	/* objCombined Value:
 		{
-			port: 1234,
+			port: 456,
 			memcached: [
 				'localhost'
 			]
