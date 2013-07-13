@@ -534,3 +534,124 @@ test('deep clone', function (t) {
   //----- NEVER USE EXTEND WITH THE ABOVE SITUATION ------------------------------
   t.end();
 });
+
+test('deep clone; arrays are overwritten, not merged', function(t) {
+  var defaults = {
+    arr: [1, 2, 3]
+  };
+  var override = {
+    arr: ["x"]
+  };
+  var expectedTarget = {
+    arr: ["x"]
+  };
+
+  var target = extend(defaults, override);
+
+  t.deepEqual(target, expectedTarget, 'arrays are overwritten, not merged');
+  t.end();
+});
+
+test('deep clone, recursive by default', function (t) {
+  var ori = {
+    str: 'no shit',
+    int: 76,
+    arr: [1, 2, 3, 4],
+    date: new Date(81, 7, 26)
+  };
+  var target = extend(ori, deep);
+
+  t.deepEqual(ori, {
+    str: 'no shit',
+    int: 76,
+    arr: [1, 2, 3, 4],
+    date: new Date(81, 7, 26),
+    ori: {
+      str: 'me a test',
+      int: 10,
+      arr: [1, 'what', new Date(81, 8, 4)],
+      date: new Date(81, 4, 13)
+    },
+    layer: {
+      int: 10,
+      str: 'str',
+      date: new Date(84, 5, 12),
+      arr: [101, 'dude', new Date(82, 10, 4)],
+      deep: {
+        str: 'me a test',
+        int: 10,
+        arr: [1, 'what', new Date(81, 8, 4)],
+        date: new Date(81, 7, 4)
+      }
+    }
+  }, 'original object is merged');
+  t.deepEqual(deep, {
+    ori: {
+      str: 'me a test',
+      int: 10,
+      arr: [1, 'what', new Date(81, 8, 4)],
+      date: new Date(81, 4, 13)
+    },
+    layer: {
+      int: 10,
+      str: 'str',
+      date: new Date(84, 5, 12),
+      arr: [101, 'dude', new Date(82, 10, 4)],
+      deep: {
+        str: 'me a test',
+        int: 10,
+        arr: [1, 'what', new Date(81, 8, 4)],
+        date: new Date(81, 7, 4)
+      }
+    }
+  }, 'deep is unchanged');
+  t.deepEqual(target, {
+    str: 'no shit',
+    int: 76,
+    arr: [1, 2, 3, 4],
+    date: new Date(81, 7, 26),
+    ori: {
+      str: 'me a test',
+      int: 10,
+      arr: [1, 'what', new Date(81, 8, 4)],
+      date: new Date(81, 4, 13)
+    },
+    layer: {
+      int: 10,
+      str: 'str',
+      date: new Date(84, 5, 12),
+      arr: [101, 'dude', new Date(82, 10, 4)],
+      deep: {
+        str: 'me a test',
+        int: 10,
+        arr: [1, 'what', new Date(81, 8, 4)],
+        date: new Date(81, 7, 4)
+      }
+    }
+  }, 'deep + object + object is deeply merged object');
+
+  target.layer.deep = 339;
+  t.deepEqual(deep, {
+    ori: {
+      str: 'me a test',
+      int: 10,
+      arr: [1, 'what', new Date(81, 8, 4)],
+      date: new Date(81, 4, 13)
+    },
+    layer: {
+      int: 10,
+      str: 'str',
+      date: new Date(84, 5, 12),
+      arr: [101, 'dude', new Date(82, 10, 4)],
+      deep: {
+        str: 'me a test',
+        int: 10,
+        arr: [1, 'what', new Date(81, 8, 4)],
+        date: new Date(81, 7, 4)
+      }
+    }
+  }, 'deep is unchanged after setting target property');
+  //----- NEVER USE EXTEND WITH THE ABOVE SITUATION ------------------------------
+  t.end();
+});
+
