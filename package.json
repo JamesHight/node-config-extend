@@ -1,7 +1,7 @@
 {
   "name": "config-extend",
   "description": "Modified version of extend for config files",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": {
     "name": "James Hight"
   },
