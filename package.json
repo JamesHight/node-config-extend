@@ -1,7 +1,7 @@
 {
   "name": "config-extend",
   "description": "Modified version of extend for config files",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "James Hight"
   },
@@ -10,6 +10,11 @@
       "name": "jmerrick",
       "email": "james@zavoo.com"
     }
+  ],
+  "contributors": [ 
+    {
+      "name": "Jason Karns"
+    } 
   ],
   "repository": {
     "type": "git",
