@@ -21,7 +21,7 @@ Usage
 
 ````javascript
 var configExtend = require('config-extend'),
-	production = {		
+	production = {
 		port: 1234,
 		memcached: [
 			'server1',
@@ -30,7 +30,7 @@ var configExtend = require('config-extend'),
 		]
 	},
 	staging = {
-		prot: 456,
+		port: 456,
 		memcached: [
 			'server4'
 		]
