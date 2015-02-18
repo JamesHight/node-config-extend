@@ -1,7 +1,7 @@
 {
   "name": "config-extend",
   "description": "Modified version of extend for config files",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "author": {
     "name": "James Hight"
   },
@@ -14,6 +14,9 @@
   "contributors": [
     {
       "name": "Jason Karns"
+    },
+    {
+      "name": "Andrew Nichols"
     }
   ],
   "repository": {
